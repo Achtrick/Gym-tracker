@@ -1,0 +1,17 @@
+@if (authStateStore.user(); as user) {
+  @switch (user.role) {
+    @case (UserRole.ADMIN) {
+      <!-- admin layout -->
+      <router-outlet />
+    }
+    @case (UserRole.USER) {
+      <!-- user layout -->
+      <router-outlet />
+    }
+    @default {
+      <router-outlet />
+    }
+  }
+} @else {
+  <router-outlet />
+}

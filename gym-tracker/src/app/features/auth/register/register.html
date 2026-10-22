@@ -1,0 +1,21 @@
+<div class="container">
+  <form>
+    <img alt="gym-tracker" src="app-icon.svg" />
+    <input type="text" placeholder="First name" />
+    <input type="email" placeholder="Last name" />
+    <input type="email" placeholder="Email" />
+    <div class="password-container">
+      <input [type]="passwordVisible() ? 'text' : 'password'" placeholder="Password" />
+      <div class="icons" (click)="togglePasswordVisibility()">
+        @if (passwordVisible()) {
+          <gym-tracker-svg-icon [svgName]="'open-eye'" />
+        } @else {
+          <gym-tracker-svg-icon [svgName]="'close-eye'" />
+        }
+      </div>
+    </div>
+    <input [type]="passwordVisible() ? 'text' : 'password'" placeholder="Confirm password" />
+    <button type="submit">Register</button>
+    <p>Already have an account ? <a routerLink="/auth">Login !</a></p>
+  </form>
+</div>

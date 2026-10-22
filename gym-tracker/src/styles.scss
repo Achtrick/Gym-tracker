@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+:root {
+  --color-bg: #16181d; /* Graphite */
+  --color-accent: #c8f135; /* Volt */
+  --color-accent-light: #c8f13548; /* VoltLite */
+  --color-text: #e8e9ec; /* Chalk */
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+p,
+pre {
+  color: var(--color-text);
+  margin: 0px;
+}
+
+body {
+  background-color: var(--color-bg);
+  margin: 0px;
+}
+
+input {
+  border-radius: 4px;
+  border: 2px solid transparent;
+  height: 40px;
+  background-color: #e8e9ec;
+  color: #16181d;
+  padding: 0px 4px;
+  font-size: 15px;
+  transition: all 0.3s;
+
+  & :focus {
+    border-bottom: 2px solid var(--color-accent);
+  }
+}
+
+button {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  height: 40px;
+  border: 2px solid var(--color-accent);
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+
+  &:hover {
+    background-color: white;
+  }
+}
