@@ -2,9 +2,22 @@
 
 :root {
   --color-bg: #16181d; /* Graphite */
+  --color-bg-light: #16181db4; /* GraphiteLight */
   --color-accent: #c8f135; /* Volt */
-  --color-accent-light: #c8f13548; /* VoltLite */
+  --color-accent-light: #d4eb80; /* VoltLite */
   --color-text: #e8e9ec; /* Chalk */
+  --color-success: #35f164; /* Green */
+  --color-success-50: #77ef95; /* Green */
+  --color-success-25: #c3eece; /* Green */
+  --color-warning: #f1c235; /* Orange */
+  --color-warning-50: #f2d683; /* Orange */
+  --color-warning-25: #efe4c4; /* Orange */
+  --color-error: #f13b35; /* Red */
+  --color-error-50: #ee807c; /* Red */
+  --color-error-25: #eec6c5; /* Red */
+  --color-info: #35bff1; /* Ciel */
+  --color-info: #81d0ed; /* Ciel */
+  --color-info: #b9dfed; /* Ciel */
 }
 
 * {
@@ -37,7 +50,7 @@ input {
   font-size: 15px;
   transition: all 0.3s;
 
-  & :focus {
+  &:focus {
     border-bottom: 2px solid var(--color-accent);
   }
 }
