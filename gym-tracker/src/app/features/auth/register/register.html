@@ -1,21 +1,49 @@
 <div class="container">
-  <form>
+  <form (submit)="register($event)" novalidate>
     <img alt="gym-tracker" src="app-icon.svg" />
-    <input type="text" placeholder="First name" />
-    <input type="email" placeholder="Last name" />
-    <input type="email" placeholder="Email" />
+    <gym-tracker-text-box
+      [formField]="form.firstName"
+      type="text"
+      placeholder="First name"
+      autocomplete="given-name"
+    />
+    <gym-tracker-text-box
+      [formField]="form.lastName"
+      type="text"
+      placeholder="Last name"
+      autocomplete="family-name"
+    />
+    <gym-tracker-text-box
+      [formField]="form.email"
+      type="email"
+      placeholder="Email"
+      autocomplete="email"
+    />
     <div class="password-container">
-      <input [type]="passwordVisible() ? 'text' : 'password'" placeholder="Password" />
-      <div class="icons" (click)="togglePasswordVisibility()">
-        @if (passwordVisible()) {
-          <gym-tracker-svg-icon [svgName]="'open-eye'" />
-        } @else {
-          <gym-tracker-svg-icon [svgName]="'close-eye'" />
-        }
-      </div>
+      <gym-tracker-text-box
+        [formField]="form.password"
+        [type]="passwordVisible() ? 'text' : 'password'"
+        placeholder="Password"
+        autocomplete="new-password"
+      />
+      <button
+        type="button"
+        class="icons"
+        (click)="togglePasswordVisibility()"
+        [attr.aria-label]="passwordVisible() ? 'Hide password' : 'Show password'"
+      >
+        <gym-tracker-svg-icon [svgName]="passwordVisible() ? 'open-eye' : 'close-eye'" />
+      </button>
     </div>
-    <input [type]="passwordVisible() ? 'text' : 'password'" placeholder="Confirm password" />
-    <button type="submit">Register</button>
+    <gym-tracker-text-box
+      [formField]="form.confirmPassword"
+      [type]="passwordVisible() ? 'text' : 'password'"
+      placeholder="Confirm password"
+      autocomplete="new-password"
+    />
+    <button type="submit" [disabled]="form().submitting()">
+      {{ form().submitting() ? 'Creating account…' : 'Register' }}
+    </button>
     <p>Already have an account ? <a routerLink="/auth">Login !</a></p>
   </form>
 </div>
